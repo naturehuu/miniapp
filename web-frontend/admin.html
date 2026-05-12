@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>题库管理 - 面试模拟系统</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="card">
+        <div class="topbar">
+          <h1>题库管理</h1>
+          <a class="link-btn" href="./index.html">返回面试页</a>
+        </div>
+        <p class="subtitle">可生成、编辑并保存岗位面试问题，保存后所有用户看到相同题目</p>
+        <div class="row">
+          <label for="admin-role-select">岗位</label>
+          <select id="admin-role-select"></select>
+          <button id="refresh-btn">加载已保存题目</button>
+          <button id="generate-btn">AI 重新生成</button>
+        </div>
+        <div id="admin-status" class="status"></div>
+      </section>
+
+      <section class="card">
+        <div class="topbar">
+          <h2>问题编辑</h2>
+          <div class="row">
+            <button id="add-question-btn">新增问题</button>
+            <button id="save-btn" class="primary">保存到题库</button>
+          </div>
+        </div>
+        <form id="question-form"></form>
+      </section>
+    </main>
+    <script src="./admin.js"></script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<view class="card">
+  <view class="title">岗位选择</view>
+  <picker mode="selector" range="{{roles}}" bindchange="onRoleChange">
+    <view class="picker">
+      {{ selectedRole || "请选择目标岗位" }}
+    </view>
+  </picker>
+  <view wx:if="{{loading}}">问题加载中...</view>
+</view>
+
+<view class="card" wx:if="{{questions.length}}">
+  <view class="title">面试回答</view>
+  <block wx:for="{{questions}}" wx:key="id">
+    <view class="question-item">
+      <view class="question-index">Q{{index + 1}}</view>
+      <view class="question-text">{{item.text}}</view>
+      <textarea
+        class="answer-box"
+        placeholder="请输入你的回答"
+        data-question-id="{{item.id}}"
+        bindinput="onAnswerInput"
+        value="{{answers[item.id] || ''}}"
+      />
+    </view>
+  </block>
+  <button class="submit-btn" type="warn" bindtap="submit" loading="{{submitting}}">
+    {{ submitting ? "提交中..." : "提交并评分" }}
+  </button>
+</view>
+
+<view class="card" wx:if="{{resultReady}}">
+  <view class="title">评分结果</view>
+  <view class="summary">
+    <text>平均分：{{averageScore}}</text>
+    <text>岗位适配度：{{roleFitness}}</text>
+  </view>
+  <block wx:for="{{questionResults}}" wx:key="question_id">
+    <view class="result-item">
+      <view>题目ID：{{item.question_id}}</view>
+      <view>分数：{{item.score}}</view>
+      <view class="reason">说明：{{item.reason}}</view>
+      <view class="feedback">
+        建议：{{feedbackMap[item.question_id] || "暂无建议"}}
+      </view>
+    </view>
+  </block>
+</view>

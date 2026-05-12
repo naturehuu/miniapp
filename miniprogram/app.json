@@ -1,0 +1,11 @@
+{
+  "pages": ["pages/interview/interview"],
+  "window": {
+    "navigationBarTitleText": "面试模拟系统",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "backgroundTextStyle": "light"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

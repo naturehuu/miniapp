@@ -1,0 +1,157 @@
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #101828;
+  --muted: #475467;
+  --border: #e4e7ec;
+  --primary: #2563eb;
+  --danger: #dc2626;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  max-width: 900px;
+  margin: 28px auto;
+  padding: 0 16px 32px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 14px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.topbar h1,
+.topbar h2,
+.topbar p {
+  margin: 0;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin-top: 0;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+label {
+  min-width: 36px;
+}
+
+select,
+button,
+textarea {
+  font: inherit;
+}
+
+select {
+  min-width: 220px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+button {
+  border: 0;
+  border-radius: 8px;
+  padding: 9px 16px;
+  cursor: pointer;
+  background: #111827;
+  color: #fff;
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+button.primary {
+  background: var(--primary);
+  margin-top: 10px;
+}
+
+.link-btn {
+  display: inline-block;
+  text-decoration: none;
+  background: #111827;
+  color: #fff;
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+.danger-btn {
+  background: var(--danger);
+}
+
+.status {
+  min-height: 20px;
+  margin-top: 10px;
+  color: var(--muted);
+}
+
+.status.error {
+  color: var(--danger);
+}
+
+.qa-item {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.qa-item p {
+  margin: 0 0 8px;
+}
+
+textarea {
+  width: 100%;
+  min-height: 84px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px;
+  resize: vertical;
+}
+
+.summary {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.result-item {
+  border-top: 1px solid var(--border);
+  padding: 10px 0;
+}
+
+.result-item p {
+  margin: 4px 0;
+}
+
+.hidden {
+  display: none;
+}

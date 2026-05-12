@@ -1,0 +1,13 @@
+page {
+  background: #f5f7fb;
+  color: #1f2a37;
+  font-size: 28rpx;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 16rpx;
+  padding: 28rpx;
+  margin: 20rpx 24rpx;
+  box-shadow: 0 8rpx 20rpx rgba(16, 24, 40, 0.06);
+}
