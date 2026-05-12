@@ -106,7 +106,7 @@ async function generateQuestions() {
     editorQuestions = data.questions || [];
     renderEditor();
     const err = data.llm_error ? `，错误：${data.llm_error}` : "";
-    setStatus(`生成完成，来源：${data.engine || "-"}，模型：${data.llm_provider || "-"}${err}`);
+    setStatus(`生成完成，来源：${data.engine || "-"}${err}`);
   } catch (err) {
     setStatus(err.message || "生成失败", true);
   } finally {

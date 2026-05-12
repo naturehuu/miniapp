@@ -103,9 +103,8 @@ function renderResult(scoreData, feedbackData) {
 
   const scoreEngine = scoreData.engine || "-";
   const feedbackEngine = feedbackData.engine || "-";
-  const provider = scoreData.llm_provider || feedbackData.llm_provider || "-";
   const llmError = scoreData.llm_error || feedbackData.llm_error || "";
-  summary.textContent = `平均分：${scoreData.average_score}，岗位适配度：${scoreData.role_fitness}，评分引擎：${scoreEngine}，建议引擎：${feedbackEngine}，模型：${provider}${llmError ? `，错误：${llmError}` : ""}`;
+  summary.textContent = `平均分：${scoreData.average_score}，岗位适配度：${scoreData.role_fitness}，评分引擎：${scoreEngine}，建议引擎：${feedbackEngine}${llmError ? `，错误：${llmError}` : ""}`;
   resultList.innerHTML = "";
 
   (scoreData.question_results || []).forEach((item) => {
@@ -153,9 +152,7 @@ async function submitAnswers() {
 async function checkHealth() {
   try {
     const data = await request("/health");
-    setStatus(
-      `后端已连接，端口 ${data.port}，LLM_PROVIDER=${data.llm_provider || "mock"}`
-    );
+    setStatus(`后端已连接，端口 ${data.port}`);
   } catch (err) {
     setStatus(`后端不可用：${err.message || "连接失败"}`, true);
   }
